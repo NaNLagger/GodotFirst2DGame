@@ -1,1 +1,1 @@
-rootProject.name = "godot-kotlin-template"
+rootProject.name = "GodotFirst2DGame"

@@ -47,3 +47,19 @@ godot {
     //projectName.set("LibraryProjectName")
     //projectName.set("LibraryProjectName")
 }
+
+tasks.register<Exec>("runGodotGame") {
+    // Avoid running the game before rebuilding the project.
+    mustRunAfter("build")
+
+    // This can be an arbitrary path.
+    setWorkingDir(projectDir.absolutePath)
+
+    commandLine(
+        "/Applications/Godot.app/Contents/MacOS/Godot",
+        // Attach to Godot editor (requires enabling Debug -> Keep Debug Server Open).
+        "--remote-debug", "tcp://127.0.0.1:6007",
+        // Start main scene of the project instead of the editor.
+        "--path", projectDir.absolutePath,
+    )
+}

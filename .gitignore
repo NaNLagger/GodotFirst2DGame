@@ -8,7 +8,9 @@ build/
 # Godot Kotlin/JVM specific ignores
 .idea/
 jre-arm64/
+jre-arm64-macos/
 jre-amd64/
 graal/
 *.log
 src/main/resources/META-INF/services/
+jvm/
